@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<layout>
+    <ko_blog_blog_index>
+        <reference name="content">
+            <block type="core/template" name="sample_template" template="sample.phtml" />
+            <block type="ko_blog/adminhtml_blogpost_edit" name = "blog_form" template="ko_blog/post.phtml"/>
+        </reference>
+    </ko_blog_blog_index>
+    <ko_blog_adminhtml_blog_index>
+        <reference name="content">
+            <block type="core/template" name="sample_template1" template="sample.phtml" />
+            <block type="ko_blog/adminhtml_blogpost_edit" name="admin_blog_form" />
+        </reference>
+    </ko_blog_adminhtml_blog_index>
+</layout>

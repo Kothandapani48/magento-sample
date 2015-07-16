@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<config>
+    <modules>
+        <Ko_Blog>
+            <version>1.0</version>
+        </Ko_Blog>
+    </modules>
+    <frontend>
+        <routers>
+            <ko_blog>
+                <use>standard</use>
+                <args>
+                    <module>Ko_Blog</module> 
+                    <frontName>blog</frontName>
+                </args>
+            </ko_blog>
+        </routers>
+        <layout>
+            <updates>
+                <ko_blog>
+                    <file>blog.xml</file>
+                </ko_blog>
+            </updates>
+        </layout>
+        </frontend>
+        <admin>
+            <routers>
+                <adminhtml>
+                    <args>
+                        <modules>
+                            <ko_blog before="Mage_Adminhtml">Ko_Blog_Adminhtml</ko_blog>
+                        </modules>
+                    </args>
+                </adminhtml>
+            </routers>
+        </admin>
+        <adminhtml>
+            <layout>
+                <updates>
+                    <ko_blog>
+                        <file>blog.xml</file>
+                    </ko_blog>
+                </updates>
+            </layout>
+        </adminhtml>
+    <global>
+        <blocks>
+            <blog>
+                <class>Ko_Blog_Block</class>
+            </blog>
+        </blocks>
+        <models>
+            <blog>
+                <class>Ko_Blog_Model</class>
+                <resourceModel>blog_resource</resourceModel>
+            </blog>
+            <blog_resource>
+                <class>Ko_Blog_Model_Resource</class>
+                <entities>
+                    <blog>
+                        <table>blog</table>
+                    </blog>
+                    <comment>
+                        <table>comment</table>
+                    </comment>
+                </entities>
+            </blog_resource>
+        </models>
+         <resources>
+            <ko_blog_setup>
+                <setup>
+                    <module>Ko_Blog</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </ko_blog_setup>
+            
+            <ko_blog_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </ko_blog_write>
+            <ko_blog_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </ko_blog_read>
+        </resources>
+    </global>
+</config>
