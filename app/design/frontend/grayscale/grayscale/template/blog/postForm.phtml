@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<?php 
+$baseUrl = Mage::getUrl('*/*/submit');
+?>
+        <form action="<?php echo $baseUrl; ?>" method="post">
+            <fieldset>
+                <legend>Post Form</legend>
+                <label>Post Title: </label>
+                <input type="text" name="title" />
+                <label>Post Description: </label>
+                <textarea name="description"></textarea>
+                <input type="hidden" name="form-type" value="post" />
+                <input type="submit" value="Post" />
+            </fieldset>
+        </form>

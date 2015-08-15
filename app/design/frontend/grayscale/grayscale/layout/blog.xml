@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<layout>
+    <default>
+        <reference name="top.menu">
+            <block type="blog/navigation" name="blog.topnav" template="catalog/navigation/top.phtml" />
+        </reference>
+    </default>
+    <ko_blog_blog_index>
+        <reference name="content">
+            <!--<block type="core/template" name="sample_template" template="sample.phtml" />-->
+            <block type="blog/blog" name = "blog.form" template="blog/postForm.phtml"/>
+           
+            
+        </reference>
+    </ko_blog_blog_index>
+    <ko_blog_blog_postlist>
+        <reference name="content">
+             <block type="blog/blog" name = "blog.posts" template = "blog/postList.phtml" />
+        </reference>
+    </ko_blog_blog_postlist>
+    <ko_blog_blog_postview>
+        <reference name="content">
+            <block type="blog/blog" name="post.view" template="blog/postView.phtml">
+               <block type="blog/blog" name="post.comments" as="post_comments" template="blog/postComment.phtml"/> 
+               <block type="blog/blog" name="post.comment.form" as="post_comment_form" template="blog/postCommentForm.phtml"/>
+            </block>
+        </reference>
+    </ko_blog_blog_postview>
+</layout>
