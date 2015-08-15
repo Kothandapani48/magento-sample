@@ -1,1 +1,7 @@
 /nbproject/private/
+/var/cache/*  
+ 
+/skin/frontend/default/grayscale_blue
+/skin/frontend/default/grayscale_orange
+/skin/frontend/default/grayscale_green
+/skin/frontend/default/grayscale_red
