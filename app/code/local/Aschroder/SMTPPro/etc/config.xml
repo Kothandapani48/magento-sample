@@ -23,6 +23,13 @@
    				   <frontName>smtppro</frontName>
    				 </args>
   			</smtppro>
+                        <catalog>
+                            <args>
+                                <modules>
+                                    <!--<smtppro before="Mage_Catalog">Aschroder_SMTPPro</smtppro>-->
+                                </modules>
+                            </args>
+                        </catalog>
 		</routers>
   	</frontend>
     <admin>

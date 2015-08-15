@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 class Ko_Blog_Model_Blog extends Mage_Core_Model_Abstract{
-    protected function __construct() {
-        $this->__init('blog/blog');
+    public function _construct() {
+        $this->_init('blog/blog');
     }
 }

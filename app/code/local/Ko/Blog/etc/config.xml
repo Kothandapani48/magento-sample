@@ -21,6 +21,23 @@ and open the template in the editor.
                     <frontName>blog</frontName>
                 </args>
             </ko_blog>
+<!--            <catalog>
+                <args>
+                    <modules>
+                        <ko_blog before="Mage_Catalog">Ko_Blog</ko_blog>
+                    </modules>
+                </args>
+            </catalog>-->
+            
+      <!-- Controller Rewrite -->      
+            <ko_aummy>
+                <args>
+                    <modules>
+                        <ko_blog before="Ko_Aummy">Ko_Blog</ko_blog>
+                    </modules>
+                </args>
+            </ko_aummy>
+      <!-- Controller Rewrite -->
         </routers>
         <layout>
             <updates>
@@ -32,6 +49,7 @@ and open the template in the editor.
         </frontend>
         <admin>
             <routers>
+                <!---Admin Controller Rewrite -->
                 <adminhtml>
                     <args>
                         <modules>
@@ -39,6 +57,7 @@ and open the template in the editor.
                         </modules>
                     </args>
                 </adminhtml>
+                <!---Admin Controller Rewrite -->
             </routers>
         </admin>
         <adminhtml>
@@ -56,6 +75,11 @@ and open the template in the editor.
                 <class>Ko_Blog_Block</class>
             </blog>
         </blocks>
+        <helpers>
+            <blog>
+                <class>Ko_Blog_Helper</class>
+            </blog>
+        </helpers>
         <models>
             <blog>
                 <class>Ko_Blog_Model</class>
@@ -73,6 +97,18 @@ and open the template in the editor.
                 </entities>
             </blog_resource>
         </models>
+        <events>
+            <controller_action_layout_generate_blocks_after>
+                <observers>
+                    <allproducts>
+                        <type>singleton</type>
+                        <class>Ko_Blog_Model_Observer</class>
+                        <method>regeneratemenu</method>
+                    </allproducts>
+                </observers>
+            </controller_action_layout_generate_blocks_after>
+        </events>
+            
          <resources>
             <ko_blog_setup>
                 <setup>
