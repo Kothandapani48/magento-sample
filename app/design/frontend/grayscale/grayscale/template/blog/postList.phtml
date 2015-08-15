@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<?php $postList = $this->postList();
+$postViewUrl = Mage::getUrl('*/*/postView');
+Mage::log($postList);
+?>
+<div id="postList">
+<?php foreach($postList as $post){ ?>
+<?php 
+$postId = $post['post_id'];
+$title = $post['title'];
+$description = $post['description'];
+$descLength = strlen($description);
+if($descLength > 20):
+$description = substr($description,0,20) . '...';
+endif;
+?>
+<div id="post">
+    <div class="post-title"><a href="<?php echo $postViewUrl . 'post_id/' . $postId ?>"><strong><?php echo $title ?></strong></a></div>
+    <div class="post-desc"><?php echo $description ?></div> 
+    <hr>
+</div>
+<?php } ?>
+</div>

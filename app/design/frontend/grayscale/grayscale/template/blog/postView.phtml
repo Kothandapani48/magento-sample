@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<?php 
+$postId = $this->getRequest()->getParam('post_id');
+$postInfo = $this->postList($postId);
+$postDesc = is_null($postInfo['description'])? 'No Description' : $postInfo['description'];
+?>
+<div id="post-view">
+    <h1><?php echo $postInfo['title']; ?></h1>
+    <h3>Posted on: <?php echo date('d/m/Y H:i:s',$postInfo['timestamp']) ?></h3>
+    <p><h2><?php echo $postDesc; ?></h2></p>
+</div>
+<div id="post-comments">
+    <?php echo $this->getChildHtml('post_comments'); ?>
+</div>
+<div id="post-comment-form">
+    <?php echo $this->getChildHtml('post_comment_form'); ?>
+</div>

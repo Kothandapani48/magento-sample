@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<config>
+    <modules>
+        <Ko_Aummy>
+            <version>0.1</version>
+        </Ko_Aummy>
+    </modules>
+    <frontend>
+        <routers>
+            <ko_aummy>
+                <use>standard</use>
+                <args>
+                    <module>Ko_Aummy</module>
+                    <frontName>ko_aummy</frontName>
+                </args>
+            </ko_aummy>
+            <ca_dummy>
+                <use>standard</use>
+                <args>
+                    <modules>
+                        <ko_aummy before="CA_Dummy">Ko_Aummy</ko_aummy>
+                    </modules>
+                </args>
+            </ca_dummy>
+        </routers>
+    </frontend>
+    <global>
+<!--        <events>
+            <controller_action_postdispatch_catalog_product_view>
+                <observers>
+                    <ko_aummy>
+                        <class>Ko_Aummy_Model_Observer</class>
+                        <method>viewAction</method>
+                    </ko_aummy>
+                </observers>
+            </controller_action_postdispatch_catalog_product_view>
+        </events>-->
+    </global>
+</config>

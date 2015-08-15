@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<div id="post-comments">
+    Comments:<br />
+    <?php
+$postId = $this->getRequest()->getParam('post_id');
+
+$postComments = $this->getPostComments($postId);
+foreach($postComments as $postComment){
+?>
+<div class="comment-title"><?php echo $postComment['title'] ?></div>
+<div class="comment-description"><?php echo $postComment['description'] ?></div>
+<div class="comment-datetime">Commented on: <?php echo date('d/m/Y H:i:s',$postComment['timestamp'])?></div>
+<hr>
+<?php } ?>
+</div>

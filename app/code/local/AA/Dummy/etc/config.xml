@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<config>
+    <modules>
+        <AA_Dummy>
+            <version>0.1</version>
+        </AA_Dummy>
+    </modules>
+    <frontend>
+        <routers>
+            <aa_dummy>
+                <use>standard</use>
+                <args>
+                    <module>AA_Dummy</module>
+                    <frontName>dummy</frontName>
+                </args>
+            </aa_dummy>
+            <catalog>
+                <args>
+                    <modules>
+                        <!--<aa_dummy before="Mage_Catalog">AA_Dummy</aa_dummy>-->
+                    </modules>
+                </args>
+            </catalog>
+        </routers>
+    </frontend>
+</config>
