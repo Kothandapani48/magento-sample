@@ -13,7 +13,13 @@ class Ko_Blog_Adminhtml_BlogController extends Mage_Adminhtml_Controller_Action{
                 'AdminPost',
                 array('template'=>'sample.phtml')
                 );
-//        z$this->getLayout()->getBlock('content')->append($block);
+//        $this->getLayout()->getBlock('content')->append($block);
+        $this->renderLayout();
+    }
+    
+    public function sampleAction(){
+        $this->loadLayout();
+        
         $this->renderLayout();
     }
 }

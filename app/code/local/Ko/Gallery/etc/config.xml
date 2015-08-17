@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<config>
+    <modules>
+        <Ko_Gallery>
+            <version>1.0</version>
+        </Ko_Gallery>
+    </modules>
+    <frontend>
+        <routers>
+            <ko_gallery>
+                <use>standard</use>
+                <args>
+                    <module>Ko_Gallery</module>
+                    <frontName>gallery</frontName>
+                </args>
+            </ko_gallery>
+        </routers>
+        <layout>
+            <updates>
+                <ko_gallery>
+                    <file>gallery.xml</file>
+                </ko_gallery>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+            <admin_gallery>
+                <use>admin</use>
+                <args>                    
+                    <module>Ko_Gallery_Adminhtml</module>
+                    <frontName>admin_gallery</frontName>
+                </args>
+            </admin_gallery>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <ko_gallery>
+                    <file>gallery.xml</file>
+                </ko_gallery>
+            </updates>
+        </layout>
+    </adminhtml>
+    <global>
+        <blocks>
+            <ko_gallery>
+                <class>Ko_Gallery_Block</class>
+            </ko_gallery>
+        </blocks>
+<!--        <helpers>
+            <ko_gallery>
+                <class>Ko_Gallery_Helper</class>
+            </ko_gallery>
+        </helpers>-->
+            
+    </global>
+</config>

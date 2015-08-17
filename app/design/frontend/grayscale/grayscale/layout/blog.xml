@@ -31,4 +31,9 @@ and open the template in the editor.
             </block>
         </reference>
     </ko_blog_blog_postview>
+    <ko_blog_adminhtml_blog_index>
+        <reference name="content">
+            <block type="core/template" name="post.sample" template="sample.phtml" />
+        </reference>
+    </ko_blog_adminhtml_blog_index>
 </layout>

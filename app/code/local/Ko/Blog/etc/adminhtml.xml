@@ -21,5 +21,9 @@ and open the template in the editor.
         <title>Blog</title>
          <action>adminhtml/blog</action>
     </blog>
+    <sample>
+        <title>Sample</title>
+        <action>adminhtml/blog/sample</action>
+    </sample>
 </menu>
 </config>

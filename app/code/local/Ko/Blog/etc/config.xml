@@ -21,15 +21,15 @@ and open the template in the editor.
                     <frontName>blog</frontName>
                 </args>
             </ko_blog>
-<!--            <catalog>
+            <catalog>
                 <args>
                     <modules>
                         <ko_blog before="Mage_Catalog">Ko_Blog</ko_blog>
                     </modules>
                 </args>
-            </catalog>-->
+            </catalog>
             
-      <!-- Controller Rewrite -->      
+       Controller Rewrite       
             <ko_aummy>
                 <args>
                     <modules>
@@ -37,7 +37,7 @@ and open the template in the editor.
                     </modules>
                 </args>
             </ko_aummy>
-      <!-- Controller Rewrite -->
+       Controller Rewrite 
         </routers>
         <layout>
             <updates>
@@ -49,15 +49,15 @@ and open the template in the editor.
         </frontend>
         <admin>
             <routers>
-                <!---Admin Controller Rewrite -->
+                -Admin Controller Rewrite 
                 <adminhtml>
                     <args>
                         <modules>
-                            <ko_blog before="Mage_Adminhtml">Ko_Blog_Adminhtml</ko_blog>
+                            <ko_blog>Ko_Blog_Adminhtml</ko_blog>
                         </modules>
                     </args>
                 </adminhtml>
-                <!---Admin Controller Rewrite -->
+                -Admin Controller Rewrite 
             </routers>
         </admin>
         <adminhtml>
