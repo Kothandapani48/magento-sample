@@ -9,7 +9,7 @@ and open the template in the editor.
 <config>
     <modules>
         <Ko_Gallery>
-            <version>1.0</version>
+            <version>1.2</version>
         </Ko_Gallery>
     </modules>
     <frontend>
@@ -35,8 +35,8 @@ and open the template in the editor.
             <admin_gallery>
                 <use>admin</use>
                 <args>                    
-                    <module>Ko_Gallery_Adminhtml</module>
-                    <frontName>admin_gallery</frontName>
+                        <module>Ko_Gallery_Adminhtml</module>  
+                        <frontName>admin_gallery</frontName>
                 </args>
             </admin_gallery>
         </routers>
@@ -52,15 +52,51 @@ and open the template in the editor.
     </adminhtml>
     <global>
         <blocks>
-            <ko_gallery>
+            <gallery>
                 <class>Ko_Gallery_Block</class>
-            </ko_gallery>
+            </gallery>
         </blocks>
 <!--        <helpers>
             <ko_gallery>
                 <class>Ko_Gallery_Helper</class>
             </ko_gallery>
         </helpers>-->
-            
+        <models>
+            <ko_gallery>
+                <class>Ko_Gallery_Model</class>
+                <resourceModel>ko_gallery_model_resource</resourceModel>
+            </ko_gallery>
+            <ko_gallery_model_resource>
+                <class>Ko_Gallery_Model_Resource</class>
+                <entities>
+                    <gallery>
+                        <table>gallery</table>
+                    </gallery>
+                    <gallerygroup>
+                        <table>gallery_group</table>
+                    </gallerygroup>
+                </entities>
+            </ko_gallery_model_resource>
+        </models>
+        <resources>
+            <ko_gallery_setup>
+                <setup>
+                    <module>Ko_Gallery</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </ko_gallery_setup>
+            <ko_gallery_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </ko_gallery_read>
+            <ko_gallery_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </ko_gallery_write>
+        </resources> 
     </global>
 </config>

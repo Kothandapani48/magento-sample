@@ -8,11 +8,13 @@
 class Ko_Blog_Adminhtml_BlogController extends Mage_Adminhtml_Controller_Action{
     public function indexAction(){
         $this->loadLayout();
-        $block = $this->getLayout()->createBlock(
-                'Mage_Core_Block_Template',
-                'AdminPost',
-                array('template'=>'sample.phtml')
-                );
+        $blogBlock = $this->getLayout()->createBlock('blog/adminhtml_blogpost_edit');
+        $this->_addContent($blogBlock);
+//        $block = $this->getLayout()->createBlock(
+//                'Mage_Core_Block_Template',
+//                'AdminPost',
+//                array('template'=>'sample.phtml')
+//                );
 //        $this->getLayout()->getBlock('content')->append($block);
         $this->renderLayout();
     }

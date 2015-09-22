@@ -10,7 +10,18 @@
 class Ko_Gallery_Adminhtml_GalleryController extends Mage_Adminhtml_Controller_Action{
     public function indexAction(){
         $this->loadLayout();
-//        $gallery_form_block
+        $galleryForm = $this->getLayout()->createBlock('gallery/adminhtml_gallery_edit');
+        $this->_addContent($galleryForm);
+        $galleryGrid = $this->getLayout()->createBlock('gallery/adminhtml_gallery_grid');
+        $this->_addContent($galleryGrid);
         $this->renderLayout();
+    }
+    
+    public function saveAction(){
+       $requestParams = $this->getRequest()->getParams();
+       Mage::log("Request Params");
+       Mage::log($requestParams);
+       $this->_redirect('*/*/index');
+       return;
     }
 }

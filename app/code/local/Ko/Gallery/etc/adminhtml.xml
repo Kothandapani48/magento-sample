@@ -8,7 +8,7 @@ and open the template in the editor.
     <menu>
         <ko_gallery>
             <title>Gallery</title>
-            <action>admin_gallery/gallery</action>
+            <action>admin_gallery/gallerygroup</action>
         </ko_gallery>
     </menu>
 </config>

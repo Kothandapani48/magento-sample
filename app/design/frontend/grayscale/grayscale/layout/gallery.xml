@@ -5,14 +5,14 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <layout>
-    <ko_gallery_adminhtml_gallery_index>
+<!--    <ko_gallery_adminhtml_gallery_index>
         <reference name="content">
-            <!--<block type="ko_gallery/gallery" name="ko_gallery_admin.sample" template="sample.phtml" />-->
+            <block type="ko_gallery/gallery" name="ko_gallery_admin.sample" template="sample.phtml" />
             <block type="ko_gallery/adminhtml_form" name="ko_gallery.form">
                 
             </block>
         </reference>
-    </ko_gallery_adminhtml_gallery_index>
+    </ko_gallery_adminhtml_gallery_index>-->
     <ko_gallery_gallery_index>
         <reference name="content">
             <block type="ko_gallery/gallery" name="gallery.sample" template="sample.phtml" /> 
