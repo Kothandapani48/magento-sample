@@ -18,14 +18,15 @@ class Ko_Gallery_Block_Adminhtml_Gallery_Grid extends Mage_Adminhtml_Block_Widge
            'header'=>'Id',
             'index'=>'id',
         ));
+        $this->addColumn('title',array(
+            'header'=>'Title',
+            'index'=>'title'
+        ));
         $this->addColumn('image',array(
             'header'=>'Image',
-            'renderer'=> ''
+            'renderer'=> 'gallery/adminhtml_gallery_renderer_imageView'
         ));
-        $this->addColumn('description',array(
-            'header'=>'Description',
-            'index'=>'description'
-        ));
+        
         $this->addColumn('created',array(
            'header'=>'Created On',
             'index'=>'created',

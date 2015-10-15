@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+    <modules>
+        <Ko_Gallerytest>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Ko_Gallerytest>
+    </modules>
+</config>

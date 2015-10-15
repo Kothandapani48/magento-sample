@@ -36,6 +36,7 @@ class Ko_Gallery_Block_Adminhtml_Gallerygroup_Grid extends Mage_Adminhtml_Block_
             'header'=> 'Action',
             'renderer'=>'gallery/adminhtml_gallerygroup_renderer_action'
         ));
+        $this->addExportType('*/*/exportExcel','Excel');
         return parent::_prepareColumns();
     }
 }

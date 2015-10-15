@@ -14,6 +14,25 @@ class Ko_Gallery_Adminhtml_GallerygroupController extends Mage_Adminhtml_Control
         $galleryGroupGrid = $this->getLayout()->createBlock('gallery/adminhtml_gallerygroup_grid');
         $this->_addContent($galleryGroupGrid);
         $this->renderLayout();
+         
+        
+        
+//        $file = 'example.csv';
+//$csv = new Varien_File_Csv();
+//$csvdata = array();
+//$products = Mage::getModel('catalog/product')->getCollection();
+// 
+//foreach ($products as $product)
+//{
+//    $product_data = array();
+//    $product_data['id'] = $product->getId();
+//    $product_data['sku'] = $product->getSku();
+// 
+//    $csvdata[] = $product_data;
+//}
+// 
+//$csv->saveData($file, $csvdata);
+        
     }
     
     public function saveAction(){
@@ -25,5 +44,10 @@ class Ko_Gallery_Adminhtml_GallerygroupController extends Mage_Adminhtml_Control
         $galleryGroupModel->setData($galleryGroupData)->save();
         $this->_redirect('*/*/index');
         return;
+    }
+    
+    
+    public function exportExcelAction(){
+        $grid = $this->getLayout()->createBlock();
     }
 }

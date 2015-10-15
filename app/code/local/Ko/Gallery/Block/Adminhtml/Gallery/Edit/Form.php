@@ -10,6 +10,8 @@ class Ko_Gallery_Block_Adminhtml_Gallery_Edit_Form extends Mage_Adminhtml_Block_
 
         $galleryGroupId = $this->getRequest()->getParam('id'); // Gallery Group Id
         
+        Mage::log("GalleryGroup Id: $galleryGroupId");
+        
         $form = new Varien_Data_Form(array(
             'id'=>'gallery_form',
             'action'=> $this->getUrl('*/*/save'),

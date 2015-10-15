@@ -19,9 +19,38 @@ class Ko_Gallery_Adminhtml_GalleryController extends Mage_Adminhtml_Controller_A
     
     public function saveAction(){
        $requestParams = $this->getRequest()->getParams();
-       Mage::log("Request Params");
        Mage::log($requestParams);
-       $this->_redirect('*/*/index');
+       $this->uploadGallery($requestParams);
+       $this->_redirect('*/*/index/id/' . $requestParams['gallerygroup_id']);
        return;
+    }
+    
+    public function uploadGallery($requestParams){
+        $files = $_FILES['upload_picture'];
+       if(isset($files['name']) && !empty($files['name'])){
+           try{
+               $fileUploader = new Varien_File_Uploader('upload_picture');
+               $fileUploader->setAllowedExtensions(array('jpeg','png','jpg'));
+               $fileUploader->setAllowRenameFiles(false);
+
+               $uploadDir = Mage::getBaseDir('media') . DS . gallery;
+               $fileSave = $fileUploader->save($uploadDir,$files['name']);
+               $filePath = $this->getUrl('media' . DS . 'gallery' . DS . $fileSave['file']);
+               Mage::log("Media url");
+               $mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+               $uploadedFilePath = $mediaUrl . '/gallery/' . $fileSave['file'];
+               Mage::log("Upload path: $uploadedFilePath");
+               $galleryModel = Mage::getModel('ko_gallery/gallery');
+               $galleryData = array('image_path'=>$uploadedFilePath,'title'=>$requestParams['title'],'created'=>time(),'gallerygroup_id'=>$requestParams['gallerygroup_id']);
+               $galleryModel->setData($galleryData);
+               $galleryModel->save();
+               Mage::getSingleton('adminhtml/session')->addSuccess('Gallery has been successfully uploaded');
+           }catch(Exception $e){
+               Mage::log("Exception Message:");
+               $exceptionMsg = $e->getMessage();
+               Mage::getSingleton('adminhtml/session')->addError($exceptionMsg);
+               
+           }
+       }
     }
 }

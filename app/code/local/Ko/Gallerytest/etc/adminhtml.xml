@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+    <menu>
+       <Ko_Gallerytest>
+                        <title>Gallery Test</title>
+                        <children>
+                            <gallerygrouptest>
+                                <title>Gallery Test Group</title>
+                                <action>admin_gallerytest/gallerygrouptest</action>
+                            </gallerygrouptest>
+                        </children>
+                    </Ko_Gallerytest> 
+    </menu>
+                    
+                
+</config>

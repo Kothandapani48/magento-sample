@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+    <modules>
+        <Ko_Gallerytest>
+            <version>1.1</version>
+        </Ko_Gallerytest>
+    </modules>
+    <global>
+        <helpers>
+            <gallerytest>
+                <class>Ko_Gallerytest_Helper</class>
+            </gallerytest>
+        </helpers>
+        <models>
+            <gallerytest>
+                <class>Ko_Gallerytest_Model</class>
+                <resourceModel>gallerytestresource</resourceModel>
+            </gallerytest>
+            <gallerytestresource>
+                <class>Ko_Gallerytest_Model_Resource</class>
+                <entities>
+                    <gallerytest>
+                        <table>gallerytest</table>
+                    </gallerytest>
+                    <gallerytestgroup>
+                        <table>gallerytest_group</table>
+                    </gallerytestgroup>
+                </entities>
+            </gallerytestresource>
+        </models>
+        <resources>
+            <ko_gallerytest_setup>
+                <setup>
+                    <module>Ko_Gallerytest</module>
+                </setup>
+            </ko_gallerytest_setup>
+        </resources>
+    </global>
+    <admin>
+        <routers>
+            <admin_gallerytest>
+                <use>admin</use>
+                <args>
+                    <module>Ko_Gallerytest_Adminhtml</module>
+                    <frontName>admin_gallerytest</frontName>
+                </args>
+            </admin_gallerytest>
+        </routers>
+    </admin>
+    
+</config>

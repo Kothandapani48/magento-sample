@@ -8,7 +8,7 @@
 $installer = $this;
 $installer->startSetup();
 $createTableObject = $installer->getConnection()
-        ->newTable($installer->getTable('ko_gallery/gallery_group'))
+        ->newTable($installer->getTable('ko_gallery/gallerygroup'))
         ->addColumn('id',  Varien_Db_Ddl_Table::TYPE_INTEGER,null,array(
             'primary'=>TRUE,
             'comment'=>'ID'

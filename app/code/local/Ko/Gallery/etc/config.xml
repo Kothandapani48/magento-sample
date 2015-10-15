@@ -9,7 +9,7 @@ and open the template in the editor.
 <config>
     <modules>
         <Ko_Gallery>
-            <version>1.2</version>
+            <version>1.3</version>
         </Ko_Gallery>
     </modules>
     <frontend>
@@ -21,6 +21,13 @@ and open the template in the editor.
                     <frontName>gallery</frontName>
                 </args>
             </ko_gallery>
+            <checkout>
+            <args>
+                <modules>
+                    <ko_gallery before="Mage_Checkout">Ko_Gallery</ko_gallery>
+                </modules>
+            </args>
+        </checkout>   
         </routers>
         <layout>
             <updates>
@@ -29,6 +36,18 @@ and open the template in the editor.
                 </ko_gallery>
             </updates>
         </layout>
+        <events>
+            <checkout_type_onepage_save_order_after>
+                <observers>
+                    <kogalleryorderexport>
+                        <class>Ko_Gallery_Model_Observer</class>
+                        <method>orderExport</method>
+                    </kogalleryorderexport>
+                </observers>
+            </checkout_type_onepage_save_order_after>
+        </events>
+        
+            
     </frontend>
     <admin>
         <routers>
